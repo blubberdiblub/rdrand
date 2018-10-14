@@ -27,9 +27,7 @@ from random import Random as StdRandom
 from _rdrand import *
 
 if HAS_RAND == 0:
-    print( "This module requires a cpu which supports the" +\
-          " RdRand instruction")
-    raise SystemError
+    raise SystemError('requires a CPU which supports the rdrand instruction')
 
 if HAS_SEED == 0:
     rdseed_get_bits = None
